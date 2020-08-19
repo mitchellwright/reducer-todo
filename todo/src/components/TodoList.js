@@ -1,14 +1,23 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useState } from "react";
 import { todoReducer, initialState } from "../reducers/todoReducer";
 
 function TodoList() {
   const [state, dispatch] = useReducer(todoReducer, initialState);
+  const [newTodo, setNewTodo] = useState("");
+
   const handleChange = (e) => {
     dispatch({
       type: "TOGGLE_TODO",
       payload: { id: e.target.id, completed: e.target.checked },
     });
   };
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    dispatch({ type: "ADD_TODO", payload: newTodo });
+    setNewTodo("");
+  };
+
   return (
     <form>
       {state.map((todo) => {
@@ -30,8 +39,15 @@ function TodoList() {
           </div>
         );
       })}
-      <input type="text" placeholder="Add new todo..." />
-      <button>Add Item</button>
+      <input
+        type="text"
+        name="new-todo"
+        id="new-todo"
+        placeholder="Add new todo..."
+        value={newTodo}
+        onChange={(e) => setNewTodo(e.target.value)}
+      />
+      <button onClick={handleClick}>Add Item</button>
     </form>
   );
 }

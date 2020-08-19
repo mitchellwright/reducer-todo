@@ -31,7 +31,10 @@ export const todoReducer = (state, action) => {
     case "REMOVE_TODO":
       return;
     case "ADD_TODO":
-      return;
+      return [
+        ...state,
+        { item: action.payload, id: Date.now(), completed: false },
+      ];
     default:
       return state;
   }

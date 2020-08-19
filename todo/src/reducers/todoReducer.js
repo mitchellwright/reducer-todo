@@ -1,6 +1,6 @@
-// export const TOGGLE_TODO = "TOGGLE_TODO";
-// export const REMOVE_TODO = "REMOVE_TODO";
-// export const ADD_TODO = "ADD_TODO";
+export const TOGGLE_TODO = "TOGGLE_TODO";
+export const CLEAR_COMPLETED = "CLEAR_COMPLETED";
+export const ADD_TODO = "ADD_TODO";
 
 export const initialState = [
   {
@@ -22,15 +22,15 @@ export const initialState = [
 
 export const todoReducer = (state, action) => {
   switch (action.type) {
-    case "TOGGLE_TODO":
+    case TOGGLE_TODO:
       return state.map((todo) =>
         todo.id === parseInt(action.payload.id)
           ? { ...todo, completed: action.payload.completed }
           : { ...todo }
       );
-    case "REMOVE_TODO":
-      return;
-    case "ADD_TODO":
+    case CLEAR_COMPLETED:
+      return state.filter((todo) => todo.completed === false);
+    case ADD_TODO:
       return [
         ...state,
         { item: action.payload, id: Date.now(), completed: false },

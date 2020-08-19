@@ -20,7 +20,12 @@ function TodoList() {
               id={todo.id}
               onChange={handleChange}
             />
-            <label htmlFor={todo.id}>{todo.item}</label>
+            <label
+              className={todo.completed ? "completed" : ""}
+              htmlFor={todo.id}
+            >
+              {todo.item}
+            </label>
             <br />
           </div>
         );

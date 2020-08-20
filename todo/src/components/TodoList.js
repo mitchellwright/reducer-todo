@@ -60,15 +60,15 @@ function TodoList() {
           </div>
           <div>
             <label
-              for="email"
-              class="block text-sm font-medium leading-5 text-gray-700"
+              htmlFor="email"
+              className="block text-sm font-medium leading-5 text-gray-700"
             >
               Add Todo
             </label>
-            <div class="w-full max-w-sm">
-              <div class="mt-5 flex rounded-md shadow-sm">
+            <div className="w-full max-w-sm">
+              <div className="mt-5 flex rounded-md shadow-sm">
                 <input
-                  class="form-input block w-full rounded-none rounded-l-md pl-10 transition ease-in-out duration-150 sm:text-sm sm:leading-5 border border-gray-300"
+                  className="form-input block w-full rounded-none rounded-l-md pl-10 transition ease-in-out duration-150 sm:text-sm sm:leading-5 border border-gray-300"
                   name="new-todo"
                   id="new-todo"
                   placeholder="Add new todo..."
@@ -77,7 +77,7 @@ function TodoList() {
                 />
 
                 <button
-                  class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-r-md text-gray-700 bg-gray-50 hover:text-gray-500 hover:bg-white focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
+                  className="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-r-md text-gray-700 bg-gray-50 hover:text-gray-500 hover:bg-white focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
                   onClick={handleClick}
                 >
                   Add Item
@@ -86,10 +86,10 @@ function TodoList() {
             </div>
           </div>
           <br />
-          <span class="inline-flex rounded-md shadow-sm">
+          <span className="inline-flex rounded-md shadow-sm">
             <button
               type="button"
-              class="inline-flex items-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150"
+              className="inline-flex items-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150"
               onClick={handleClick}
             >
               Clear Completed Todos
